@@ -1,0 +1,10 @@
+.temporary-bounce {
+  -webkit-animation-iteration-count: 1 !important;
+  animation-iteration-count: 1 !important;
+  -webkit-animation-duration: 0.3s !important;
+  animation-duration: 0.3s !important;
+}
+
+.transition-bezier {
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+}
