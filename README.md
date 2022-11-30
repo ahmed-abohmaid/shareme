@@ -6,6 +6,9 @@
 <img src="./shareme_frontend/src/assets/logo.png" alt="logo" />
 </div>
 
+## Live : [Shareme](https://shareme-abohmaid.netlify.app)
+
+---
 
 ## ⚡About App⚡:
 
@@ -45,6 +48,10 @@ Using google authenticator
 
 ---
 
+## Live : [Shareme](https://shareme-abohmaid.netlify.app)
+
+---
+
 ## ⚡Technologies⚡
 
 ### Front-End:
@@ -73,7 +80,7 @@ _Sanity
 - [MUI](https://mui.com/)
 - [React icons](https://react-icons.github.io/react-icons)
 - [Sanity](https://www.sanity.io/)
-- [Google cloud](https://console.cloud.google.com/welcome?project=silken-apex-366705)
+- [Google cloud](https://console.cloud.google.com)
 
 ---
 <h2 align="center" id="contact">⚡️ How to reach me ⚡️</h2>
