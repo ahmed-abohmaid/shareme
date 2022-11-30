@@ -1,31 +1,74 @@
-# ⚡Shareme⚡
+<h1 align="center"> ⚡Shareme⚡</h1>
 
-## Social Media App
+<h2 align="center"> Social Media App </h2>
 
-### How to Use the App:
+## ⚡About App⚡:
 
-![alt text](./src/icons/01.png)
-![alt text](./src/icons/02.png)
-![alt text](./src/icons/03.png)
-![alt text](./src/icons/04.png)
-![alt text](./src/icons/05.png)
+### Home Page
+![alt text](./shareme_frontend/src/assets/Home_01.png)
 
 ---
 
-## Technologies
+### Login Page
+Using google authenticator
+![alt text](./shareme_frontend/src/assets/Sign_in.png)
+
+---
+
+### Details for the image with images like it
+![alt text](./shareme_frontend/src/assets/Deatail.png)
+
+---
+
+### Download, delete, save and go to pin destination
+![alt text](./shareme_frontend/src/assets/Info.png)
+
+---
+
+### Upload image
+![alt text](./shareme_frontend/src/assets/Upload.png)
+
+---
+
+### Smart search
+![alt text](./shareme_frontend/src/assets/Search.png)
+
+---
+
+### Profile page with Logout
+![alt text](./shareme_frontend/src/assets/Profile.png)
+
+---
+
+## ⚡Technologies⚡
 
 ### Front-End:
+_JavaScript
+<br>
+_React.js
+<br>
+_Tailwind CSS
+<br>
+_Material UI
+<br>
+_Google Authenticator
 
-[![My Skills](https://skillicons.dev/icons?i=js,react,tailwind,&perline=10)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,react,tailwind,materialui,&perline=10)](https://skillicons.dev)
+
+### Back-End:
+_Sanity
 
 ---
-## Resources
+## ⚡Resources⚡
 
 ### Documentation:
 
 - [Create-react-app Documentation](https://reactjs.org/docs/create-a-new-react-app.html)
 - [React Router Documentation](https://reactrouter.com/en/main)
+- [MUI](https://mui.com/)
 - [React icons](https://react-icons.github.io/react-icons)
+- [Sanity](https://www.sanity.io/)
+- [Google cloud](https://console.cloud.google.com/welcome?project=silken-apex-366705)
 
 ---
 <h2 align="center" id="contact">⚡️ How to reach me ⚡️</h2>
