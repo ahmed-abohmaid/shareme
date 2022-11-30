@@ -1,6 +1,11 @@
-<h1 align="center"> ⚡Shareme⚡</h1>
+<h1 align="center"> ⚡Shareme 'Social Media App'⚡</h1>
 
-<h2 align="center"> Social Media App </h2>
+<div align="center">
+<img src="./shareme_frontend/src/assets/logowhite.png" alt="logo" />
+<br>
+<img src="./shareme_frontend/src/assets/logo.png" alt="logo" />
+</div>
+
 
 ## ⚡About App⚡:
 
