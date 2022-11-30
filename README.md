@@ -24,6 +24,7 @@ Using google authenticator
 ---
 
 ### Details for the image with images like it
+You can add and delete comments
 ![alt text](./shareme_frontend/src/assets/Deatail.png)
 
 ---
