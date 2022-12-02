@@ -44,8 +44,6 @@ const PinInfo = ({ show, postedBy, image, _id, destination, save }) => {
     });
   };
 
-  console.log(show);
-
   return (
     <div
       className={`${show} absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-50`}
