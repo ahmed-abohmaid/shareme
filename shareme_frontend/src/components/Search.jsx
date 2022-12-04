@@ -10,14 +10,17 @@ const Search = ({ searchTerm }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (searchTerm) {
-      setLoading(true);
-      const query = searchQuery(searchTerm.toLowerCase());
-      client.fetch(query).then((data) => {
-        setPins(data);
-        setLoading(false);
-      });
-    } else {
+    setTimeout(() => {
+      if (searchTerm) {
+        setLoading(true);
+        const query = searchQuery(searchTerm.toLowerCase());
+        client.fetch(query).then((data) => {
+          setPins(data);
+          setLoading(false);
+        });
+      }
+    }, 500);
+    if (!searchTerm) {
       client.fetch(feedQuery).then((data) => {
         setPins(data);
         setLoading(false);
