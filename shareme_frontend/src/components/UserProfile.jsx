@@ -12,8 +12,6 @@ import { client } from "../Client";
 import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
 
-import cover from "../assets/cover.png"
-
 const activeBtnStyles =
   "bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none transition-all duration-75 ease-in";
 const notActiveBtnStyles =
@@ -66,7 +64,7 @@ const UserProfile = () => {
         <div className="relative flex flex-col mb-7">
           <div className="flex flex-col justify-center items-center">
             <img
-              src={cover}
+              src="https://source.unsplash.com/1600x900/?nature,photography,technology"
               alt="banner-pic"
               className="w-full h-370 2xl:h-510 shadow-md object-cover"
             />
