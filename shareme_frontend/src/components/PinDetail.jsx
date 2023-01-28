@@ -52,10 +52,9 @@ const PinDetail = ({ user }) => {
         ])
         .commit()
         .then(() => {
-          fetchPinDetails();
-          setAddingComment(false);
+          setTimeout(() => fetchPinDetails(), 1000);
+          setTimeout(() => setAddingComment(false), 5000);
           setComment("");
-          window.location.reload();
         });
     }
   };
@@ -66,8 +65,7 @@ const PinDetail = ({ user }) => {
       .unset([`comments[_key=="${key}"]`])
       .commit()
       .then(() => {
-        fetchPinDetails();
-        window.location.reload();
+        setTimeout(() => fetchPinDetails(), 1000);
       })
       .catch((err) => {
         console.log(err);
