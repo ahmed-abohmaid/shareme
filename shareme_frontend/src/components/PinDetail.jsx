@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { MdDelete, MdDownloadForOffline } from "react-icons/md";
-import { Link, useParams } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
-
-import { client, urlFor } from "../Client";
-import MasonryLayout from "./MasonryLayout";
-import { pinDetailQuery, pinDetailMorePinQuery } from "../utils/data";
-import Spinner from "./Spinner";
-import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
+import React, { useState, useEffect } from 'react';
+import { MdDownloadForOffline } from 'react-icons/md';
+import { Link, useParams } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+import { client, urlFor } from '../Client';
+import MasonryLayout from './MasonryLayout';
+import { pinDetailQuery, pinDetailMorePinQuery } from '../utils/data';
+import Spinner from './Spinner';
+import { BsFillArrowUpRightCircleFill } from 'react-icons/bs';
+import Comment from './Comment';
 
 const PinDetail = ({ user }) => {
   const [pins, setPins] = useState(null);
   const [pinDetail, setPinDetail] = useState(null);
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState('');
   const [addingComment, setAddingComment] = useState(false);
+  const [delettingComment, setDelettingComment] = useState(false);
   const { pinId } = useParams(); // we have passed a pinID as a variable in the url and use oarams deal with it ant fetch it
 
   const fetchPinDetails = () => {
@@ -43,29 +44,32 @@ const PinDetail = ({ user }) => {
       client
         .patch(pinId)
         .setIfMissing({ comments: [] })
-        .insert("after", "comments[-1]", [
+        .insert('after', 'comments[-1]', [
           {
             comment,
             _key: uuidv4(),
-            postedBy: { _type: "postedBy", _ref: user?._id },
+            postedBy: { _type: 'postedBy', _ref: user._id },
           },
         ])
         .commit()
         .then(() => {
-          setTimeout(() => fetchPinDetails(), 1000);
-          setTimeout(() => setAddingComment(false), 5000);
-          setComment("");
+          fetchPinDetails();
+          setAddingComment(false);
+          setComment('');
         });
     }
   };
 
   const deleteComment = (key) => {
+    setDelettingComment(true);
+
     client
       .patch(pinId)
       .unset([`comments[_key=="${key}"]`])
       .commit()
       .then(() => {
-        setTimeout(() => fetchPinDetails(), 1000);
+        fetchPinDetails();
+        setDelettingComment(false);
       })
       .catch((err) => {
         console.log(err);
@@ -80,7 +84,7 @@ const PinDetail = ({ user }) => {
     <>
       <div
         className="flex flex-col xl:flex-row m-auto mt-5 bg-white"
-        style={{ maxWidth: "1500px", borderRadius: "32px" }}
+        style={{ maxWidth: '1500px', borderRadius: '32px' }}
       >
         <div className="flex justify-center items-center md:items-start flex-initial">
           <img
@@ -135,36 +139,12 @@ const PinDetail = ({ user }) => {
           <h2 className="mt-5 text-2xl">Comments</h2>
           <div className="max-h-370 overflow-y-auto">
             {pinDetail?.comments?.map((comment) => (
-              <div
-                key={comment.comment}
-                className="flex relative gap-2 mt-5 items-center border-b-gray-200 border-b-2 pb-3 bg-white rounded-lg"
-              >
-                <Link
-                  to={`/user-profile/${comment.postedBy?._id}`}
-                  className="flex gap-2 mt-5 items-center bg-white rounded-lg"
-                >
-                  <img
-                    src={comment.postedBy?.image}
-                    alt="user-profile"
-                    className="w-10 h-10 rounded-full cursor-pointer"
-                  />
-                </Link>
-                <div className="flex flex-col">
-                  <p className="font-bold">{comment.postedBy?.userName}</p>
-                  <p>{comment.comment}</p>
-                </div>
-                {comment.postedBy?._id === user?._id && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      deleteComment(comment._key);
-                    }}
-                    className="absolute right-2 bottom-2 bg-white text-xl text-dark opacity-75 hover:opacity-100 shadow-lg outline-none transition-all duration-75 ease-in cursor-pointer"
-                  >
-                    <MdDelete />
-                  </button>
-                )}
-              </div>
+              <Comment
+                comment={comment}
+                deleteComment={deleteComment}
+                delettingComment={delettingComment}
+                user={user}
+              />
             ))}
           </div>
           <div className="flex flex-wrap mt-6 gap-3 items-center">
@@ -190,7 +170,7 @@ const PinDetail = ({ user }) => {
               onClick={addComment}
               className="bg-red-500 hover:bg-red-600 transition-colors ease-linear text-white rounded-full px-6 py-2 text-base font-semibold outline-none"
             >
-              {addingComment ? "Posting..." : "Add"}
+              {addingComment ? 'Posting...' : 'Add'}
             </button>
           </div>
         </div>
