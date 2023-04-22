@@ -171,6 +171,7 @@ const PinDetail = ({ user }) => {
               type="text"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
+              onKeyUp={(e) => e.key === 'Enter' && addComment()}
               placeholder="Add a comment"
               className="flex-1 outline-none border-2 rounded-md border-gray-200 border-transparent py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity"
             />
