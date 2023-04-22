@@ -7,14 +7,15 @@ import MasonryLayout from './MasonryLayout';
 import { pinDetailQuery, pinDetailMorePinQuery } from '../utils/data';
 import Spinner from './Spinner';
 import { BsFillArrowUpRightCircleFill } from 'react-icons/bs';
-import Comment from './Comment';
+import { lazy, Suspense } from 'react';
+import { Avatar, Skeleton } from '@mui/material';
+const Comment = lazy(() => import('./Comment'));
 
 const PinDetail = ({ user }) => {
   const [pins, setPins] = useState(null);
   const [pinDetail, setPinDetail] = useState(null);
   const [comment, setComment] = useState('');
   const [addingComment, setAddingComment] = useState(false);
-  const [delettingComment, setDelettingComment] = useState(false);
   const { pinId } = useParams(); // we have passed a pinID as a variable in the url and use oarams deal with it ant fetch it
 
   const fetchPinDetails = () => {
@@ -61,15 +62,12 @@ const PinDetail = ({ user }) => {
   };
 
   const deleteComment = (key) => {
-    setDelettingComment(true);
-
     client
       .patch(pinId)
       .unset([`comments[_key=="${key}"]`])
       .commit()
       .then(() => {
         fetchPinDetails();
-        setDelettingComment(false);
       })
       .catch((err) => {
         console.log(err);
@@ -139,12 +137,23 @@ const PinDetail = ({ user }) => {
           <h2 className="mt-5 text-2xl">Comments</h2>
           <div className="max-h-370 overflow-y-auto">
             {pinDetail?.comments?.map((comment) => (
-              <Comment
-                comment={comment}
-                deleteComment={deleteComment}
-                delettingComment={delettingComment}
-                user={user}
-              />
+              <Suspense
+                fallback={
+                  <div className="flex items-center gap-1">
+                    <Skeleton variant="circular">
+                      <Avatar />
+                    </Skeleton>
+                    <Skeleton width="100%" height="70px"></Skeleton>
+                  </div>
+                }
+                key={comment.comment}
+              >
+                <Comment
+                  comment={comment}
+                  deleteComment={deleteComment}
+                  user={user}
+                />
+              </Suspense>
             ))}
           </div>
           <div className="flex flex-wrap mt-6 gap-3 items-center">

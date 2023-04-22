@@ -1,8 +1,9 @@
-import React from "react";
-import Masorny from "react-masonry-css";
+import React, { Suspense, lazy } from 'react';
+import Masorny from 'react-masonry-css';
 
-import Pin from "./Pin";
-import "./global.css";
+import './global.css';
+import { Avatar, Skeleton } from '@mui/material';
+const Pin = lazy(() => import('./Pin'));
 
 const breakpointObj = {
   default: 4,
@@ -15,9 +16,24 @@ const breakpointObj = {
 
 const MasonryLayout = ({ pins }) => {
   return (
-    <Masorny className="flex animate-slide-fwd mt-5" breakpointCols={breakpointObj}>
+    <Masorny className="flex mt-5" breakpointCols={breakpointObj}>
       {pins?.map((pin) => (
-        <Pin key={pin._id} pin={pin} className="w-max" />
+        <Suspense
+          fallback={
+            <div className="m-2">
+              <Skeleton variant="rectangular" height="400px" />
+              <div className="flex items-center gap-1 mt-2">
+                <Skeleton variant="circular">
+                  <Avatar />
+                </Skeleton>
+                <Skeleton width="90%"></Skeleton>
+              </div>
+            </div>
+          }
+          key={pin._id}
+        >
+          <Pin pin={pin} className="w-max" />
+        </Suspense>
       ))}
     </Masorny>
   );

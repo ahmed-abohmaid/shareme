@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.12.1",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
     "@testing-library/jest-dom": "^5.16.5",

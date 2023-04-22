@@ -10,7 +10,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="m-2">
+    <div className="m-2 animate-slide-fwd">
       <div
         onMouseEnter={() => setPostHovered(true)}
         onMouseLeave={() => setPostHovered(false)}
