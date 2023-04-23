@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import { Navbar, Feed, PinDetail, CreatePin, Search } from "../components";
-import { ToastContainer } from "react-toastify";
+import { Navbar, Feed, PinDetail, CreatePin, Search } from '../components';
+import { ToastContainer } from 'react-toastify';
 
 const Pins = ({ user }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
 
   return (
     <div className="px-2 md:px-5">
@@ -30,17 +30,17 @@ const Pins = ({ user }) => {
       </div>
       {/* For Toasting Message */}
       <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme={localStorage.getItem('theme')}
+      />
     </div>
   );
 };

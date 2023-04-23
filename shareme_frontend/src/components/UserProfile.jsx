@@ -13,9 +13,9 @@ import MasonryLayout from "./MasonryLayout";
 import Spinner from "./Spinner";
 
 const activeBtnStyles =
-  "bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none transition-all duration-75 ease-in";
+  "bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none transition-all duration-75 ease-in dark:text-white";
 const notActiveBtnStyles =
-  "bg-primary text-black font-bold p-2 rounded-full w-20 outline-none transition-all duration-75 ease-in";
+  "bg-primary text-black font-bold p-2 rounded-full w-20 outline-none transition-all duration-75 ease-in dark:text-white";
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
@@ -73,7 +73,7 @@ const UserProfile = () => {
               alt="user"
               className="rounded-full w-20 h-20 -mt-10 shadow-xl object-cover"
             />
-            <h1 className="font-bold text-3xl text-center mt-3">
+            <h1 className="font-bold text-3xl text-center mt-3 dark:text-white">
               {user?.userName}
             </h1>
             <div className="absolute top-0 z-1 right-0 p-2" title="Logout">

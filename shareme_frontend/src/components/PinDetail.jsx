@@ -88,16 +88,16 @@ const PinDetail = ({ user }) => {
         position="top-right"
         autoClose={5000}
         hideProgressBar={false}
-        newestOnTop={false}
+        newestOnTop
         closeOnClick
         rtl={false}
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme={localStorage.getItem('theme')}
       />
       <div
-        className="flex flex-col xl:flex-row m-auto mt-5 bg-white"
+        className="flex flex-col xl:flex-row m-auto mt-5 bg-white dark:bg-dark2"
         style={{ maxWidth: '1500px', borderRadius: '32px' }}
       >
         <div className="flex justify-center items-center md:items-start flex-initial">
@@ -117,59 +117,62 @@ const PinDetail = ({ user }) => {
               href={pinDetail?.destination}
               target="_blank"
               rel="noreferrer"
-              className="flex justify-between gap-2 items-center opacity-90 hover:opacity-100 transition-all duration-75 ease-in"
+              className="flex justify-between gap-2 items-center opacity-90 hover:opacity-100 transition-all duration-75 ease-in dark:text-white"
             >
-              <BsFillArrowUpRightCircleFill />
+              <BsFillArrowUpRightCircleFill className="dark:text-white" />
               {pinDetail?.destination.length > 20
                 ? pinDetail?.destination.slice(8, 30)
                 : pinDetail?.destination.slice(8)}
             </a>
           </div>
           <div>
-            <h1 className="font-bold text-4xl break-words mt-5">
+            <h1 className="font-bold text-4xl break-words mt-5 dark:text-white">
               {pinDetail?.title}
             </h1>
-            <p className="mt-3">{pinDetail?.about}</p>
+            <p className="mt-3 dark:text-white">{pinDetail?.about}</p>
           </div>
           <Link
             to={`/user-profile/${pinDetail?.postedBy?._id}`}
-            className="flex gap-2 mt-5 items-center bg-white rounded-lg"
+            className="flex gap-2 mt-5 items-center bg-white dark:bg-dark2 rounded-lg"
           >
             <img
               className="w-8 h-8 rounded-full object-cover"
               src={pinDetail?.postedBy?.image}
               alt="user"
             />
-            <p className="font-semibold capitalize">
+            <p className="font-semibold capitalize dark:text-white">
               {pinDetail?.postedBy?.userName}
             </p>
           </Link>
-          <h2 className="mt-5 text-2xl">Comments</h2>
-          <div className="max-h-370 overflow-y-auto">
-            {pinDetail?.comments?.map((comment) => (
-              <Suspense
-                fallback={
-                  <div className="flex items-center gap-1">
-                    <Skeleton variant="circular">
-                      <Avatar />
-                    </Skeleton>
-                    <Skeleton width="100%" height="70px"></Skeleton>
-                  </div>
-                }
-                key={comment.comment}
-              >
-                <Comment
-                  comment={comment}
-                  deleteComment={deleteComment}
-                  user={user}
-                />
-              </Suspense>
-            ))}
+          <h2 className="mt-5 mb-1 text-2xl dark:text-white">Comments</h2>
+          <div className=" bg-gray-50 dark:bg-darkHome p-3 rounded-sm">
+            <div className="max-h-370 overflow-y-auto">
+              {pinDetail?.comments?.map((comment) => (
+                <Suspense
+                  fallback={
+                    <div className="flex items-center gap-1">
+                      <Skeleton variant="circular">
+                        <Avatar />
+                      </Skeleton>
+                      <Skeleton width="100%" height="70px"></Skeleton>
+                    </div>
+                  }
+                  key={comment.comment}
+                >
+                  <Comment
+                    comment={comment}
+                    deleteComment={deleteComment}
+                    user={user}
+                  />
+                </Suspense>
+              ))}
+            </div>
           </div>
+
           <div className="flex flex-wrap mt-6 gap-3 items-center">
             <Link
               to={`/user-profile/${pinDetail?.postedBy?._id}`}
-              className="flex items-center bg-white rounded-lg"
+              className="flex items-center bg-white dark:bg-dark2 rounded-lg"
             >
               <img
                 className="w-10 h-10 rounded-full cursor-pointer"
@@ -183,7 +186,7 @@ const PinDetail = ({ user }) => {
               onChange={(e) => setComment(e.target.value)}
               onKeyUp={(e) => e.key === 'Enter' && addComment()}
               placeholder="Add a comment"
-              className="flex-1 outline-none border-2 rounded-md border-gray-200 border-transparent py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity"
+              className="flex-1 outline-none border-2 rounded-md dark:bg-darkHome border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
             />
             <button
               type="button"
@@ -197,7 +200,7 @@ const PinDetail = ({ user }) => {
       </div>
       {pins?.length > 0 ? (
         <>
-          <h2 className="text-center font-bold text-2xl mt-8 mb-4">
+          <h2 className="text-center font-bold text-2xl mt-8 mb-4 dark:text-white">
             More like this
           </h2>
           <MasonryLayout pins={pins} />

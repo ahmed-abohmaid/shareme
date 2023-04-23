@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
-import { HiMenu } from "react-icons/hi";
-import { AiFillCloseCircle } from "react-icons/ai";
-import { Link, Routes, Route } from "react-router-dom";
+import React, { useState, useEffect, useRef } from 'react';
+import { HiMenu } from 'react-icons/hi';
+import { AiFillCloseCircle } from 'react-icons/ai';
+import { Link, Routes, Route } from 'react-router-dom';
 
-import { Sidebar, UserProfile } from "../components";
-import Pins from "./Pins";
-import { userQuery } from "../utils/data";
-import { client } from "../Client";
-import logo from "../assets/logo.png";
-import { fetchUser } from "../utils/fetchUser";
+import { Sidebar, UserProfile } from '../components';
+import Pins from './Pins';
+import { userQuery } from '../utils/data';
+import { client } from '../Client';
+import logo from '../assets/logo.png';
+import { fetchUser } from '../utils/fetchUser';
 
 const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
@@ -30,7 +30,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex bg-gray-50 h-screen flex-col md:flex-row transition-height duration-75 ease-out">
+    <div className="flex bg-gray-50 dark:bg-dark2 h-screen flex-col md:flex-row transition-height duration-75 ease-out">
       <div className="hidden md:flex flex-initial h-screen">
         <Sidebar user={user && user} closeToggle={setToggleSidebar} />
       </div>
@@ -49,7 +49,7 @@ const Home = () => {
           </Link>
         </div>
         {toggleSidebar && (
-          <div className="fixed w-3/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in">
+          <div className="fixed w-3/5 bg-white dark:bg-darkHome h-screen overflow-y-auto shadow-md z-10 animate-slide-in">
             <div className="absolute w-full flex justify-end items-center p-2">
               <AiFillCloseCircle
                 fontSize={30}

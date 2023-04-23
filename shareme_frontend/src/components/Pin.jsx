@@ -50,7 +50,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
           src={postedBy?.image}
           alt="user"
         />
-        <p className="font-semibold capitalize">{postedBy?.userName}</p>
+        <p className="font-semibold capitalize dark:text-white">{postedBy?.userName}</p>
       </Link>
     </div>
   );
