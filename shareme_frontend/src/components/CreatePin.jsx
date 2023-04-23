@@ -8,6 +8,7 @@ import Spinner from './Spinner';
 import { categories } from '../utils/data';
 
 import './global.css';
+import { toast } from 'react-toastify';
 
 const CreatePin = ({ user }) => {
   const [title, setTitle] = useState('');
@@ -45,10 +46,9 @@ const CreatePin = ({ user }) => {
           setImageAsset(document);
           setLoading(false);
           setDisabled(false);
+          toast.success('Image Uploaded Successfully');
         })
-        .catch((error) => {
-          console.log('image upload error', error);
-        });
+        .catch(() => toast.error('Somthing Went Wrong, Please Try Again!'));
     } else {
       setWrongImageType(true);
     }
@@ -76,7 +76,13 @@ const CreatePin = ({ user }) => {
         category,
       };
 
-      client.create(doc).then(() => navigate('/'));
+      client
+        .create(doc)
+        .then(() => {
+          navigate('/');
+          toast.success('Image Added Successfully');
+        })
+        .catch(() => toast.error('Somthing Went Wrong, Please Try Again!'));
     } else {
       setFeilds(true);
 
