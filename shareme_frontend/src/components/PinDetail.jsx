@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { MdDownloadForOffline } from 'react-icons/md';
 import { Link, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { client, urlFor } from '../Client';
@@ -9,6 +8,8 @@ import Spinner from './Spinner';
 import { BsFillArrowUpRightCircleFill } from 'react-icons/bs';
 import { lazy, Suspense } from 'react';
 import { Avatar, Skeleton } from '@mui/material';
+import Download from './Download';
+import SavePin from './SavePin';
 const Comment = lazy(() => import('./Comment'));
 
 const PinDetail = ({ user }) => {
@@ -94,14 +95,8 @@ const PinDetail = ({ user }) => {
         <div className="w-full p-5 flex-1 xl:min-w-620">
           <div className="flex items-center justify-between">
             <div className="flex gap-2 items-center">
-              <a
-                href={`${pinDetail?.image?.asset?.url}?dl=`}
-                download
-                onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-full w-9 h-9 flex justify-center items-center text-xl text-dark opacity-75 hover:opacity-100 shadow-lg outline-none transition-all duration-75 ease-in"
-              >
-                <MdDownloadForOffline />
-              </a>
+              <Download image={pinDetail?.image} />
+              <SavePin save={pinDetail?.save} _id={pinDetail?._id} />
             </div>
             <a
               href={pinDetail?.destination}
