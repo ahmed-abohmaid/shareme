@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid'; // To make a uniqe id for each post
 import { fetchUser } from '../utils/fetchUser';
 import { client } from '../Client';
+import { toast } from 'react-toastify';
 
 const SavePin = ({ save, _id }) => {
   const user = fetchUser();
@@ -35,28 +36,34 @@ const SavePin = ({ save, _id }) => {
         .then(() => {
           setIsSaved(true);
           setIsSaving(false);
-        });
+          toast.success('Pin Saved Successfully');
+        })
+        .catch(() => toast.error('Somthing Went Wrong, Please Try Again!'));
     }
   };
 
-  return alreadySaved || isSaved ? (
-    <button
-      type="button"
-      className="bg-red-500 opacity-70 hover:opacity-100 text-white outline-none rounded-3xl px-4 py-1 font-bold text-base hover:shadow-md"
-    >
-      {save?.length} Saved
-    </button>
-  ) : (
-    <button
-      onClick={(e) => {
-        e.stopPropagation();
-        savePin(_id);
-      }}
-      type="button"
-      className="bg-red-500 opacity-70 hover:opacity-100 text-white outline-none rounded-3xl px-4 py-1 font-bold text-base hover:shadow-md"
-    >
-      {isSaving ? 'Saving...' : 'Save'}
-    </button>
+  return (
+    <>
+      {alreadySaved || isSaved ? (
+        <button
+          type="button"
+          className="bg-red-500 opacity-70 hover:opacity-100 text-white outline-none rounded-3xl px-4 py-1 font-bold text-base hover:shadow-md"
+        >
+          {save?.length} Saved
+        </button>
+      ) : (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            savePin(_id);
+          }}
+          type="button"
+          className="bg-red-500 opacity-70 hover:opacity-100 text-white outline-none rounded-3xl px-4 py-1 font-bold text-base hover:shadow-md"
+        >
+          {isSaving ? 'Saving...' : 'Save'}
+        </button>
+      )}
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import Home from "./container/Home";
 import { useEffect } from "react";
 import { fetchUser } from "./utils/fetchUser";
+import "react-toastify/dist/ReactToastify.css";
 
 export const App = () => {
   const navigate = useNavigate();

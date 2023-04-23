@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { Navbar, Feed, PinDetail, CreatePin, Search } from "../components";
+import { ToastContainer } from "react-toastify";
 
 const Pins = ({ user }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,6 +28,19 @@ const Pins = ({ user }) => {
           <Route path="/search" element={<Search searchTerm={searchTerm} />} />
         </Routes>
       </div>
+      {/* For Toasting Message */}
+      <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
     </div>
   );
 };

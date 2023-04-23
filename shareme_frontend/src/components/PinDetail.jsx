@@ -10,6 +10,7 @@ import { lazy, Suspense } from 'react';
 import { Avatar, Skeleton } from '@mui/material';
 import Download from './Download';
 import SavePin from './SavePin';
+import { ToastContainer, toast } from 'react-toastify';
 const Comment = lazy(() => import('./Comment'));
 
 const PinDetail = ({ user }) => {
@@ -58,7 +59,9 @@ const PinDetail = ({ user }) => {
           fetchPinDetails();
           setAddingComment(false);
           setComment('');
-        });
+          toast.success('Comment Added Successfully');
+        })
+        .catch(() => toast.error('Somthing Went Wrong, Please Try Again!'));
     }
   };
 
@@ -69,10 +72,9 @@ const PinDetail = ({ user }) => {
       .commit()
       .then(() => {
         fetchPinDetails();
+        toast.success('Comment Was Deleted Successfully');
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch(() => toast.error('Somthing Went Wrong, Please Try Again!'));
   };
 
   useEffect(fetchPinDetails, [pinId]);
@@ -81,6 +83,19 @@ const PinDetail = ({ user }) => {
 
   return (
     <>
+      {/* For Toasting Message */}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div
         className="flex flex-col xl:flex-row m-auto mt-5 bg-white"
         style={{ maxWidth: '1500px', borderRadius: '32px' }}
