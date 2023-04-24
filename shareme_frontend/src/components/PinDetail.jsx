@@ -205,7 +205,7 @@ const PinDetail = ({ user }) => {
         {pins?.length > 0 ? (
           <MasonryLayout pins={pins} />
         ) : (
-          <h2 className="flex justify-center items-center text-xl">
+          <h2 className="flex justify-center items-center text-xl dark:text-white">
             No pins found
           </h2>
         )}
