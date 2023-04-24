@@ -198,16 +198,18 @@ const PinDetail = ({ user }) => {
           </div>
         </div>
       </div>
-      {pins?.length > 0 ? (
-        <>
-          <h2 className="text-center font-bold text-2xl mt-8 mb-4 dark:text-white">
-            More like this
-          </h2>
+      <h2 className="text-center font-bold text-2xl mt-8 mb-4 dark:text-white">
+        More like this
+      </h2>
+      <>
+        {pins?.length > 0 ? (
           <MasonryLayout pins={pins} />
-        </>
-      ) : (
-        <Spinner message="Loading more pins..." />
-      )}
+        ) : (
+          <h2 className="flex justify-center items-center text-xl">
+            No pins found
+          </h2>
+        )}
+      </>
     </>
   );
 };

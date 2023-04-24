@@ -21,12 +21,12 @@ const MasonryLayout = ({ pins }) => {
         <Suspense
           fallback={
             <div className="m-2">
-              <Skeleton variant="rectangular" height="400px" />
+              <Skeleton variant="rectangular" height="300px" animation="wave" />
               <div className="flex items-center gap-1 mt-2">
-                <Skeleton variant="circular">
+                <Skeleton variant="circular" animation="wave">
                   <Avatar />
                 </Skeleton>
-                <Skeleton width="90%"></Skeleton>
+                <Skeleton width="90%" animation="wave"></Skeleton>
               </div>
             </div>
           }
