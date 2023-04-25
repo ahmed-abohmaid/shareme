@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Comment = ({ comment, deleteComment, user }) => {
   return (
-    <div className="flex relative gap-2 mt-5 items-center shadow-2xl dark:border-darkBorder/50 dark:border-2 p-2 bg-white dark:bg-dark2 rounded-lg">
+    <div className="flex relative gap-2 mt-5 items-center shadow-2xl border-darkBorder border-2 p-2 bg-white dark:bg-dark2 rounded-lg">
       <Link
         to={`/user-profile/${comment.postedBy?._id}`}
         className="flex gap-2 items-center bg-white dark:bg-dark2 rounded-lg"

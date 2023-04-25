@@ -101,7 +101,7 @@ const CreatePin = ({ user }) => {
       )}
       <div className="flex lg:flex-row flex-col justify-center items-center bg-white dark:bg-dark3_2 lg:p-5 p-3 lg:w-4/5 w-full">
         <div className="bg-secondaryColor dark:bg-dark3 p-3 flex flex-0.7 w-full">
-          <div className="flex justify-center items-center flex-col border-2 border-dotted border-gray-300 dark:border-darkBorder p-3 w-full h-420">
+          <div className="flex justify-center items-center flex-col border-2 border-dotted border-darkBorder p-3 w-full h-420">
             {loading && <Spinner />}
             {wrongImageType && (
               <p className="text-red-500 mb-8">Wrong image type</p>
@@ -156,7 +156,7 @@ const CreatePin = ({ user }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Add your title here"
-            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
+            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
           />
           {user && (
             <div className="flex gap-2 my-2 items-center bg-white dark:bg-dark3_2 rounded-lg">
@@ -173,14 +173,14 @@ const CreatePin = ({ user }) => {
             value={about}
             onChange={(e) => setAbout(e.target.value)}
             placeholder="what is your pin about ?"
-            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
+            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
           />
           <input
             type="text"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             placeholder="Add a destination link"
-            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
+            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
           />
           <div className="flex flex-col">
             <div>
@@ -189,7 +189,7 @@ const CreatePin = ({ user }) => {
               </p>
               <select
                 onChange={(e) => setCategory(e.target.value)}
-                className="outline-none focus:bg-darkBorder w-4/5 text-base dark:border-b-0 border-b-2 border-gray-200 dark:border-darkBorder/50 py-2 pl-2 rounded-md cursor-pointer transition-all duration-200 ease-linear hover:shadow-sm focus:shadow-sm"
+                className="outline-none focus:bg-darkBorder w-4/5 text-base dark:border-0 border-2 border-darkBorder/50 py-2 pl-2 rounded-md cursor-pointer transition-all duration-200 ease-linear hover:shadow-sm focus:shadow-sm"
               >
                 <option value="other" className="bg-white outline-none">
                   Select Category
