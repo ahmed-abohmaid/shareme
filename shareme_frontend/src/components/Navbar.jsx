@@ -21,8 +21,8 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
 
   if (user) {
     return (
-      <div className="flex gap-2 md:gap-3 w-full mt-5 dark:bg-dark2">
-        <div className="flex justify-start items-center w-[80%] px-2 rounded-lg bg-white dark:bg-darkHome border-none outline-none focus-within:shadow-sm">
+      <div className="flex gap-2 md:gap-3 w-full mt-5 dark:bg-dark3_2">
+        <div className="flex justify-start items-center w-[80%] px-2 rounded-lg bg-white dark:bg-dark3_2 border-darkBorder border-[1px] outline-none focus-within:shadow-sm">
           <IoMdSearch fontSize={20} className="ml-1 dark:text-white" />
           <input
             type="text"

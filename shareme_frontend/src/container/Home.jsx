@@ -8,6 +8,7 @@ import Pins from './Pins';
 import { userQuery } from '../utils/data';
 import { client } from '../Client';
 import logo from '../assets/logo.png';
+import logoWhite from '../assets/logowhite.png';
 import { fetchUser } from '../utils/fetchUser';
 
 const Home = () => {
@@ -30,7 +31,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex bg-gray-50 dark:bg-dark2 h-screen flex-col md:flex-row transition-height duration-75 ease-out">
+    <div className="flex bg-gray-50 dark:bg-dark3 h-screen flex-col md:flex-row transition-height duration-75 ease-out">
       <div className="hidden md:flex flex-initial h-screen">
         <Sidebar user={user && user} closeToggle={setToggleSidebar} />
       </div>
@@ -38,11 +39,15 @@ const Home = () => {
         <div className="p-2 w-full flex flex-row shadow-md justify-between items-center">
           <HiMenu
             fontSize={40}
-            className="cursor-pointer"
+            className="cursor-pointer dark:text-white"
             onClick={() => setToggleSidebar(true)}
           />
           <Link to="/">
-            <img src={logo} alt="logo" className="w-28" />
+            <img
+              src={localStorage.getItem('theme') === 'dark' ? logoWhite : logo}
+              alt="logo"
+              className="w-32"
+            />
           </Link>
           <Link to={`/user-profile/${user?._id}`}>
             <img src={user?.image} alt="user" className="w-12 rounded-full" />
@@ -53,7 +58,7 @@ const Home = () => {
             <div className="absolute w-full flex justify-end items-center p-2">
               <AiFillCloseCircle
                 fontSize={30}
-                className="cursor-pointer"
+                className="cursor-pointer dark:text-white"
                 onClick={() => setToggleSidebar(false)}
               />
             </div>

@@ -9,9 +9,12 @@ module.exports = {
       colors: {
         inputR: 'hsl(210, 78%, 56%)',
         inputL: 'hsl(146, 68%, 55%)',
-        darkHome: '#1E202A',
-        dark2: '#1F212E',
+        darkHome: '#121212',
+        dark2: '#272727',
         darkBorder: '#32E6E2',
+        dark3: '#1E1E1E',
+        dark3_2: '#242424',
+        darkComment: '#383838',
       },
       spacing: {
         input: '-2em',

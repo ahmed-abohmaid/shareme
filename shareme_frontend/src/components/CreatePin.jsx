@@ -99,8 +99,8 @@ const CreatePin = ({ user }) => {
           Please fill in all the feilds.
         </p>
       )}
-      <div className="flex lg:flex-row flex-col justify-center items-center bg-white dark:bg-dark2 lg:p-5 p-3 lg:w-4/5 w-full">
-        <div className="bg-secondaryColor dark:bg-darkHome p-3 flex flex-0.7 w-full">
+      <div className="flex lg:flex-row flex-col justify-center items-center bg-white dark:bg-dark3_2 lg:p-5 p-3 lg:w-4/5 w-full">
+        <div className="bg-secondaryColor dark:bg-dark3 p-3 flex flex-0.7 w-full">
           <div className="flex justify-center items-center flex-col border-2 border-dotted border-gray-300 dark:border-darkBorder p-3 w-full h-420">
             {loading && <Spinner />}
             {wrongImageType && (
@@ -156,10 +156,10 @@ const CreatePin = ({ user }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Add your title here"
-            className="flex-1 outline-none border-2 rounded-md dark:bg-darkHome border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
+            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
           />
           {user && (
-            <div className="flex gap-2 my-2 items-center bg-white dark:bg-dark2 rounded-lg">
+            <div className="flex gap-2 my-2 items-center bg-white dark:bg-dark3_2 rounded-lg">
               <img
                 src={user.image}
                 alt="user"
@@ -173,14 +173,14 @@ const CreatePin = ({ user }) => {
             value={about}
             onChange={(e) => setAbout(e.target.value)}
             placeholder="what is your pin about ?"
-            className="flex-1 outline-none border-2 rounded-md dark:bg-darkHome border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
+            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
           />
           <input
             type="text"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             placeholder="Add a destination link"
-            className="flex-1 outline-none border-2 rounded-md dark:bg-darkHome border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
+            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
           />
           <div className="flex flex-col">
             <div>
@@ -194,10 +194,11 @@ const CreatePin = ({ user }) => {
                 <option value="other" className="bg-white outline-none">
                   Select Category
                 </option>
-                {categories.map((cat) => (
+                {categories.map((cat, index) => (
                   <option
                     className="text-base border-0 outline-none capitalize bg-white text-black"
                     value={cat.name}
+                    key={index + 1}
                   >
                     {cat.name}
                   </option>

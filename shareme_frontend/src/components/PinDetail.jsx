@@ -145,28 +145,36 @@ const PinDetail = ({ user }) => {
             </p>
           </Link>
           <h2 className="mt-5 mb-1 text-2xl dark:text-white">Comments</h2>
-          <div className=" bg-gray-50 dark:bg-darkHome p-3 rounded-sm">
-            <div className="max-h-370 overflow-y-auto">
-              {pinDetail?.comments?.map((comment) => (
-                <Suspense
-                  fallback={
-                    <div className="flex items-center gap-1">
-                      <Skeleton variant="circular">
-                        <Avatar />
-                      </Skeleton>
-                      <Skeleton width="100%" height="70px"></Skeleton>
-                    </div>
-                  }
-                  key={comment.comment}
-                >
-                  <Comment
-                    comment={comment}
-                    deleteComment={deleteComment}
-                    user={user}
-                  />
-                </Suspense>
-              ))}
-            </div>
+          <div className=" bg-gray-50 dark:bg-dark3 p-3 pt-1 rounded-sm">
+            {pinDetail?.comments ? (
+              <div className="max-h-370 overflow-y-auto">
+                {pinDetail?.comments?.map((comment) => (
+                  <Suspense
+                    fallback={
+                      <div className="flex items-center gap-1">
+                        <Skeleton variant="circular" className="dark:bg-darkComment">
+                          <Avatar />
+                        </Skeleton>
+                        <Skeleton
+                          width="100%"
+                          height="70px"
+                          className="dark:bg-darkComment"
+                        ></Skeleton>
+                      </div>
+                    }
+                    key={comment.comment}
+                  >
+                    <Comment
+                      comment={comment}
+                      deleteComment={deleteComment}
+                      user={user}
+                    />
+                  </Suspense>
+                ))}
+              </div>
+            ) : (
+              <h3 className="dark:text-white">Add comment to display</h3>
+            )}
           </div>
 
           <div className="flex flex-wrap mt-6 gap-3 items-center">
@@ -186,7 +194,7 @@ const PinDetail = ({ user }) => {
               onChange={(e) => setComment(e.target.value)}
               onKeyUp={(e) => e.key === 'Enter' && addComment()}
               placeholder="Add a comment"
-              className="flex-1 outline-none border-2 rounded-md dark:bg-darkHome border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
+              className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-gray-200 dark:border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
             />
             <button
               type="button"
