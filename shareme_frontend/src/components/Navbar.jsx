@@ -22,7 +22,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
   if (user) {
     return (
       <div className="flex gap-2 md:gap-3 w-full mt-5 dark:bg-dark3_2">
-        <div className="flex justify-start items-center w-[80%] px-2 rounded-lg bg-white dark:bg-dark3_2 border-darkBorder border-[1px] outline-none focus-within:shadow-sm">
+        <div className="flex justify-start items-center w-[80%] px-2 rounded-lg bg-white dark:bg-dark3_2 border-darkBorder border-[2px] dark:border-[1px] outline-none focus-within:shadow-sm">
           <IoMdSearch fontSize={20} className="ml-1 dark:text-white" />
           <input
             type="text"
@@ -39,7 +39,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
           </Link>
           <Link
             to="create-pin"
-            className="bg-black border-2 dark:border-[1px] border-darkBorder dark:bg-gray-50 text-white dark:text-black w-12 h-12 flex justify-center items-center rounded-lg md:w-14 md:h-12"
+            className="bg-black border-[1.5px] border-darkBorder dark:bg-gray-50 text-white dark:text-black w-12 h-12 flex justify-center items-center rounded-lg md:w-14 md:h-12"
           >
             <IoMdAdd />
           </Link>
