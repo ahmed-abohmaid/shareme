@@ -11,6 +11,7 @@ import { Avatar, Skeleton } from '@mui/material';
 import Download from './Download';
 import SavePin from './SavePin';
 import { ToastContainer, toast } from 'react-toastify';
+import DeletePin from './DeletePin';
 const Comment = lazy(() => import('./Comment'));
 
 const PinDetail = ({ user }) => {
@@ -109,21 +110,27 @@ const PinDetail = ({ user }) => {
         </div>
         <div className="w-full p-5 flex-1 xl:min-w-620">
           <div className="flex items-center justify-between">
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center flex-1">
               <Download image={pinDetail?.image} />
               <SavePin save={pinDetail?.save} _id={pinDetail?._id} />
             </div>
-            <a
-              href={pinDetail?.destination}
-              target="_blank"
-              rel="noreferrer"
-              className="flex justify-between gap-2 items-center opacity-90 hover:opacity-100 transition-all duration-75 ease-in dark:text-white"
-            >
-              <BsFillArrowUpRightCircleFill className="dark:text-white" />
-              {pinDetail?.destination.length > 20
-                ? pinDetail?.destination.slice(8, 30)
-                : pinDetail?.destination.slice(8)}
-            </a>
+            <div className="flex items-center gap-2">
+              {pinDetail?.postedBy?._id ===
+                JSON.parse(localStorage.getItem('user')).googleId && (
+                <DeletePin _id={pinDetail?._id} />
+              )}
+              <a
+                href={pinDetail?.destination}
+                target="_blank"
+                rel="noreferrer"
+                className="flex justify-between gap-2 items-center opacity-90 hover:opacity-100 transition-all duration-75 ease-in dark:text-white"
+              >
+                <BsFillArrowUpRightCircleFill className="dark:text-white" />
+                {pinDetail?.destination.length > 20
+                  ? pinDetail?.destination.slice(8, 30)
+                  : pinDetail?.destination.slice(8)}
+              </a>
+            </div>
           </div>
           <div>
             <h1 className="font-bold text-4xl break-words mt-5 dark:text-white">
@@ -152,7 +159,10 @@ const PinDetail = ({ user }) => {
                   <Suspense
                     fallback={
                       <div className="flex items-center gap-1">
-                        <Skeleton variant="circular" className="dark:bg-darkComment">
+                        <Skeleton
+                          variant="circular"
+                          className="dark:bg-darkComment"
+                        >
                           <Avatar />
                         </Skeleton>
                         <Skeleton

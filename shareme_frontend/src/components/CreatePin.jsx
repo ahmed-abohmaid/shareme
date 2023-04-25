@@ -156,7 +156,7 @@ const CreatePin = ({ user }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Add your title here"
-            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
+            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
           />
           {user && (
             <div className="flex gap-2 my-2 items-center bg-white dark:bg-dark3_2 rounded-lg">
@@ -173,14 +173,14 @@ const CreatePin = ({ user }) => {
             value={about}
             onChange={(e) => setAbout(e.target.value)}
             placeholder="what is your pin about ?"
-            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
+            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
           />
           <input
             type="text"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             placeholder="Add a destination link"
-            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-gray-300 dark:focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
+            className="flex-1 outline-none border-2 rounded-md dark:bg-dark3 border-darkBorder/50 py-2 pl-3 transition-all duration-300 ease-linear focus:border-darkBorder focus:rounded-2xl placeholder:focus:opacity-0 placeholder:focus:transition-opacity dark:placeholder:text-white dark:text-white"
           />
           <div className="flex flex-col">
             <div>

@@ -1,22 +1,13 @@
 import React from 'react';
-import { client } from '../Client';
 import { fetchUser } from '../utils/fetchUser';
 
-import { AiTwotoneDelete } from 'react-icons/ai';
 import { BsFillArrowUpRightCircleFill } from 'react-icons/bs';
 import Download from './Download';
 import SavePin from './SavePin';
-import { toast } from 'react-toastify';
+import DeletePin from './DeletePin';
 
 const PinInfo = ({ show, postedBy, image, _id, destination, save }) => {
   const user = fetchUser();
-
-  const deletePin = (id) => {
-    client
-      .delete(id)
-      .then(() => toast.success('Pin Was Deleted Successfully'))
-      .catch(() => toast.error('Somthing Went Wrong, Please Try Again!'));
-  };
 
   return (
     <div
@@ -28,7 +19,7 @@ const PinInfo = ({ show, postedBy, image, _id, destination, save }) => {
         </div>
         <SavePin save={save} _id={_id} />
       </div>
-      <div className="flex justify-between items-center gap-2 w-full">
+      <div className="flex justify-between items-center md:gap-2 w-full">
         {destination && (
           <a
             href={destination}
@@ -42,18 +33,6 @@ const PinInfo = ({ show, postedBy, image, _id, destination, save }) => {
               ? destination?.slice(8, 20)
               : destination?.slice(8)}
           </a>
-        )}
-        {postedBy?._id === user?.googleId && (
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              deletePin(_id);
-            }}
-            type="button"
-            className="bg-white opacity-70 hover:opacity-100 text-dark outline-none rounded-3xl p-2 font-bold text-base hover:shadow-md"
-          >
-            <AiTwotoneDelete title="delete" />
-          </button>
         )}
       </div>
     </div>
