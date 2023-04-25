@@ -44,7 +44,7 @@ const SavePin = ({ save, _id }) => {
 
   return (
     <>
-      {alreadySaved || isSaved ? (
+      {isSaved || alreadySaved ? (
         <button
           type="button"
           className="bg-red-500 opacity-70 hover:opacity-100 text-white outline-none rounded-3xl px-4 py-1 font-bold text-base hover:shadow-md"

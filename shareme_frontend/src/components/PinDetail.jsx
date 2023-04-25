@@ -111,12 +111,12 @@ const PinDetail = ({ user }) => {
           />
         </div>
         <div className="w-full p-5 flex-1 xl:min-w-620">
-          <div className="flex items-center justify-between">
-            <div className="flex gap-2 items-center flex-1">
+          <div className="flex md:items-center md:justify-between md:flex-row flex-col md:gap-0 gap-2 justify-center">
+            <div className="flex gap-2 items-center flex-1 flex-row-reverse justify-between md:flex-row md:justify-start">
               <Download image={pinDetail?.image} />
               <SavePin save={pinDetail?.save} _id={pinDetail?._id} />
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-row-reverse justify-between md:flex-row md:justify-start">
               {pinDetail?.postedBy?._id ===
                 JSON.parse(localStorage.getItem('user')).googleId && (
                 <DeletePin _id={pinDetail?._id} />

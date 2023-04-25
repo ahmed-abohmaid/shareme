@@ -26,7 +26,7 @@ const DeletePin = ({ _id }) => {
         deletePin(_id);
       }}
       type="button"
-      className="bg-white opacity-70 hover:opacity-100 text-dark outline-none rounded-3xl p-2 font-bold text-base hover:shadow-md"
+      className="bg-white rounded-full w-9 h-9 flex justify-center items-center text-xl text-dark opacity-75 hover:opacity-100 hover:shadow-md outline-none"
     >
       <AiTwotoneDelete title="Delete" />
     </button>

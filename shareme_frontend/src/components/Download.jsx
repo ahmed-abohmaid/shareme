@@ -8,7 +8,7 @@ const Download = ({ image }) => {
       download
       onClick={(e) => e.stopPropagation()} // To don't make it go to /pin-detail as we made on img
       className="bg-white rounded-full w-9 h-9 flex justify-center items-center text-xl text-dark opacity-75 hover:opacity-100 hover:shadow-md outline-none"
-      title='Download'
+      title="Download"
     >
       <MdDownloadForOffline />
     </a>
