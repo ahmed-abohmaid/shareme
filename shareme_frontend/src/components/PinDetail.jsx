@@ -82,6 +82,8 @@ const PinDetail = ({ user }) => {
 
   if (!pinDetail) return <Spinner message="Loading pin..." />;
 
+  console.log(pinDetail?.comments);
+
   return (
     <>
       {/* For Toasting Message */}
@@ -153,7 +155,7 @@ const PinDetail = ({ user }) => {
           </Link>
           <h2 className="mt-5 mb-1 text-2xl dark:text-white">Comments</h2>
           <div className=" bg-gray-50 dark:bg-dark3 p-3 pt-1 rounded-sm">
-            {pinDetail?.comments ? (
+            {pinDetail?.comments && pinDetail?.comments[0] ? (
               <div className="max-h-370 overflow-y-auto">
                 {pinDetail?.comments?.map((comment) => (
                   <Suspense
@@ -183,7 +185,7 @@ const PinDetail = ({ user }) => {
                 ))}
               </div>
             ) : (
-              <h3 className="dark:text-white">Add comment to display</h3>
+              <h3 className="dark:text-white mt-1">Add a comment to display</h3>
             )}
           </div>
 
@@ -194,7 +196,7 @@ const PinDetail = ({ user }) => {
             >
               <img
                 className="w-10 h-10 rounded-full cursor-pointer"
-                src={pinDetail?.postedBy?.image}
+                src={user?.image}
                 alt="user"
               />
             </Link>
