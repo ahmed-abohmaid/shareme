@@ -34,7 +34,7 @@ const Feed = () => {
   }
 
   if (!pins?.length) {
-    return <h2 className="flex justify-center items-center text-xl pt-5">No pins available for this category</h2>
+    return <h2 className="flex justify-center items-center text-xl pt-5 dark:text-white">No pins available for this category</h2>
   }
 
   return <div>{pins ? <MasonryLayout pins={pins} /> : null}</div>;

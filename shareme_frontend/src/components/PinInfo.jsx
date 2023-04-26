@@ -4,10 +4,10 @@ import { BsFillArrowUpRightCircleFill } from 'react-icons/bs';
 import Download from './Download';
 import SavePin from './SavePin';
 
-const PinInfo = ({ show, postedBy, image, _id, destination, save }) => {
+const PinInfo = ({ postedBy, image, _id, destination, save }) => {
   return (
     <div
-      className={`${show} absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-50`}
+      className={`absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-50`}
     >
       <div className="flex items-center justify-between">
         <div className="flex gap-2">

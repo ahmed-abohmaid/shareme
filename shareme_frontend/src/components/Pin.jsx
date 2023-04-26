@@ -22,14 +22,6 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
           alt="user-post"
           src={urlFor(image).width(250).url()}
         />
-        <PinInfo
-          show="md:hidden"
-          postedBy={postedBy}
-          image={image}
-          _id={_id}
-          destination={destination}
-          save={save}
-        />
         {postHovered && (
           <PinInfo
             show=" "
