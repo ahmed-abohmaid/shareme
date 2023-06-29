@@ -1,4 +1,4 @@
-<h1 align="center"> ⚡Shareme - A Social Media App⚡</h1>
+<h1 align="center"> ⚡Shareme⚡</h1>
 
 <p align="center">
   <img src="./shareme_frontend/src/assets/logo.png" alt="Shareme logo" width="300" />
@@ -8,7 +8,7 @@
   <a href="https://shareme-ahmed-abohmaid.vercel.app " target="_blank">Live Demo</a>
 </p>
 
-Shareme is a social media app that allows users to upload and share images, as well as browse and search for other users' images. It also features Google Authenticator for secure login.
+Shareme is a social media app using: (React, Tailwind CSS, MUI for masonry layout, sanity for backend, and Google Authenticator for sign-in with a Google account). You can upload, download, delete, save, and comment on images. You will find Dark Mode, smart filter, and smart search.
 
 ## Screenshots
 
@@ -41,7 +41,7 @@ View details of an image, with options to add and delete comments, download, del
 - Google Authenticator
 - Sanity
 
-[![My Skills](https://skillicons.dev/icons?i=js,react,tailwind,materialui,&perline=10)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,react,tailwind,mui,&perline=10)](https://skillicons.dev)
 
 ## Resources
 
@@ -52,12 +52,10 @@ View details of an image, with options to add and delete comments, download, del
 - [Sanity Documentation](https://www.sanity.io/)
 - [Google Cloud Platform](https://console.cloud.google.com)
 
-## Contact
-
-If you have any questions or feedback, feel free to reach out to me:
+<h2 align="center">🔗 How to reach me 🔗</h2>
   
 <p align="center">
     <a href="mailto:ahmedmedo.am121212@gmail.com"><img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=Gmail&logoColor=white"></img></a>
     <a href="https://linkedin.com/in/ahmed-abohmaid"alt="Linkedin"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-    <a href="https://www.facebook.com/abohmaid13" alt="Facebook"><img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white"></a>
-    <a href="https://github.com/Ahmed-AboHmaiD" alt="GitHub"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+    <a href="https://twitter.com/ahmed_abohmaid" alt="Twitter"><img src="https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"></a>
+</p>
