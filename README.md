@@ -1,49 +1,58 @@
-<h1 align="center"> ⚡Shareme⚡</h1>
+# Shareme Documentation
 
-<p align="center">
-  <img src="./shareme_frontend/src/assets/logo.png" alt="Shareme logo" width="300" />
-</p>
+## Introduction
 
-<p align="center">
-  <a href="https://shareme-ahmed-abohmaid.vercel.app " target="_blank">Live Demo</a>
-</p>
+This documentation provides an overview of Shareme, a social media app developed using React, Tailwind CSS, Material UI, Sanity, and Google Authenticator. The app allows users to upload, download, delete, save, and comment on images. It also features dark mode, smart filtering, and smart search functionality.
 
-Shareme is a social media app using: (React, Tailwind CSS, MUI for masonry layout, sanity for backend, and Google Authenticator for sign-in with a Google account). You can upload, download, delete, save, and comment on images. You will find Dark Mode, smart filter, and smart search.
-
-## Screenshots
-
-### Home Page
-![Shareme Home Page](./shareme_frontend/src/assets/Home_01.png)
-
-### Login Page
-Using Google Authenticator
-![Shareme Login Page](./shareme_frontend/src/assets/Sign_in.png)
-
-### Image Details
-View details of an image, with options to add and delete comments, download, delete, save, and go to pin destination.
-![Shareme Image Details Page](./shareme_frontend/src/assets/Deatail.png)
-
-### Upload Image
-![Shareme Upload Image Page](./shareme_frontend/src/assets/Upload.png)
-
-### Smart Search
-![Shareme Search Page](./shareme_frontend/src/assets/Search.png)
-
-### Profile Page with Logout
-![Shareme Profile Page](./shareme_frontend/src/assets/Profile.png)
+## Usage
+Live Demo: [Shareme Live Demo](https://shareme-ahmed-abohmaid.vercel.app)
 
 ## Technologies Used
+
+The following technologies and libraries were used in the development of this app:
 
 - JavaScript
 - React.js
 - Tailwind CSS
+- React Icons
 - Material UI
+- React Toastify
 - Google Authenticator
 - Sanity
 
-[![My Skills](https://skillicons.dev/icons?i=js,react,tailwind,mui,&perline=10)](https://skillicons.dev)
+## Features
+
+The Shareme app includes the following features:
+
+- **Upload Image:** Users can upload images to share with others.
+  
+- **Download Image:** Users can download images uploaded by other users.
+  
+- **Delete Image:** Users can delete images they have uploaded.
+  
+- **Save Image:** Users can save images to their profile for future reference.
+  
+- **Add Comment:** Users can comment on images.
+  
+- **Image Details:** Users can view detailed information about an image, including comments and options to download, delete, save, and go to the pin destination.
+  
+- **Smart Filtering:** Users can filter images based on specific criteria, such as date, popularity, and category.
+  
+- **Smart Search Functionality:** Users can search for images based on specific keywords.
+  
+- **Dark Mode:** The app supports a dark mode option for a different visual experience.
+  
+- **User Authentication with Google Authenticator:** Users can sign in to the app using their Google account.
+  
+- **Profile Page with Logout:** Users have a profile page where they can view their saved images and log out of the app.
+  
+## Code Organization and Structure
+
+The code is structured following clean code practices. The project follows a specific architecture pattern, ensuring organized and maintainable code.
 
 ## Resources
+
+The following resources were used in the development of this app:
 
 - [Create-react-app Documentation](https://reactjs.org/docs/create-a-new-react-app.html)
 - [React Router Documentation](https://reactrouter.com/en/main)
