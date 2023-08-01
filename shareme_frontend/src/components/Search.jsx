@@ -19,12 +19,16 @@ const Search = ({ searchTerm }) => {
           setLoading(false);
         });
       }
-    }, 500);
+    }, 800);
     if (!searchTerm) {
       client.fetch(feedQuery).then((data) => {
         setPins(data);
         setLoading(false);
       });
+    }
+
+    return() => {
+      setPins(null);
     }
   }, [searchTerm]);
 
@@ -33,7 +37,7 @@ const Search = ({ searchTerm }) => {
       {loading && <Spinner message="Searching for pins..." />}
       {pins?.length !== 0 && <MasonryLayout pins={pins} />}
       {pins?.length === 0 && searchTerm !== "" && !loading && (
-        <div className="mt-10 text-center text-xl ">No Pins Found!</div>
+        <div className="mt-10 text-center text-xl dark:text-white">No Pins Found!</div>
       )}
     </div>
   );
